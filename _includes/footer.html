@@ -55,8 +55,19 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 20px; color: #7a7a7a; font-size: 1.1em;">
-      Page Views: <span id="busuanzi_value_site_pv">-</span> &nbsp;&nbsp; Visitors: <span id="busuanzi_value_site_uv">-</span> (Since 2025-7-15)
+      Page Views: <span id="busuanzi_value_site_pv">...</span> &nbsp;&nbsp; Visitors: <span id="busuanzi_value_site_uv">...</span> (Since 2025-7-15)
     </div>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script>
+      // 不蒜子统计加载超时处理
+      setTimeout(function() {
+        if (document.getElementById('busuanzi_value_site_pv').innerHTML === '...') {
+          document.getElementById('busuanzi_value_site_pv').innerHTML = '1';
+        }
+        if (document.getElementById('busuanzi_value_site_uv').innerHTML === '...') {
+          document.getElementById('busuanzi_value_site_uv').innerHTML = '1';
+        }
+      }, 3000); // 3秒后如果还未加载则显示默认值
+    </script>
   </div>
 </footer> 
