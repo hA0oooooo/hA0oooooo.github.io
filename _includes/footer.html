@@ -54,37 +54,19 @@
         </div>
       </div>
     </div>
-    
-    <!-- 网站访问统计 -->
-    <div class="site-statistics">
-      <div class="stats-box">
-        <span class="stat-item">
-          <span class="emoji">👀</span>
-          <span id="busuanzi_container_site_pv" class="stat-text">
-            页面浏览: <span id="busuanzi_value_site_pv" class="stat-number">...</span>
-          </span>
-        </span>
-        
-        <span class="stat-item">
-          <span class="emoji">👥</span>
-          <span id="busuanzi_container_site_uv" class="stat-text">
-            访客数量: <span id="busuanzi_value_site_uv" class="stat-number">...</span> (自2025-7-15)
-          </span>
-        </span>
-      </div>
+    <div style="text-align: center; margin-top: 20px; color: #7a7a7a; font-size: 1.1em;">
+      Page Views: <span id="busuanzi_value_site_pv">...</span> &nbsp;&nbsp; Visitors: <span id="busuanzi_value_site_uv">...</span> (Since 2025-7-15)
     </div>
-    
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script>
-      // 不蒜子统计加载超时处理
       setTimeout(function() {
         if (document.getElementById('busuanzi_value_site_pv').innerHTML === '...') {
-          document.getElementById('busuanzi_value_site_pv').innerHTML = '1';
+          document.getElementById('busuanzi_value_site_pv').innerHTML = '0';
         }
         if (document.getElementById('busuanzi_value_site_uv').innerHTML === '...') {
-          document.getElementById('busuanzi_value_site_uv').innerHTML = '1';
-        } 
-      }, 3000); // 3秒后如果还未加载则显示默认值
+          document.getElementById('busuanzi_value_site_uv').innerHTML = '0';
+        }
+      }, 5000);
     </script>
   </div>
 </footer> 
