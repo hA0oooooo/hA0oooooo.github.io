@@ -83,62 +83,33 @@
 // 网站统计
 .site-statistics {
   text-align: center;
-  margin-top: 20px;
-  padding-top: 15px;
+  padding-top: $spacing-unit;
   border-top: 1px solid $border-color;
-  font-size: 13px;
   
-  .stats-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    
-    @include media-query($on-mobile) {
-      flex-direction: column;
-      gap: 10px;
-    }
+  p {
+    margin: 0;
+    color: $grey-color;
+    font-size: 0.9em;
   }
   
   .stat-item {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    background-color: rgba(42, 122, 226, 0.05);
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background-color: rgba(42, 122, 226, 0.1);
-      transform: translateY(-1px);
-    }
+    margin: 0 $spacing-unit / 2;
     
     @include media-query($on-mobile) {
-      padding: 6px 10px;
+      display: block;
+      margin: $spacing-unit / 4 0;
     }
   }
   
-  .emoji {
-    font-size: 16px;
-    line-height: 1;
+  .stat-icon {
+    margin-right: 4px;
+    fill: $grey-color;
   }
   
-  .stat-text {
-    color: $grey-color;
-    font-weight: 400;
-    font-size: 13px;
-    
-    @include media-query($on-mobile) {
-      font-size: 12px;
-    }
-  }
-  
-  .stat-number {
-    font-weight: 600;
+  span {
+    font-weight: 500;
     color: $brand-color;
-    margin-left: 2px;
   }
-} 
 } 
