@@ -55,23 +55,8 @@
       </div>
     </div>
     <div style="text-align: center; margin-top: 20px; color: #7a7a7a; font-size: 1.1em;">
-      Page Views: <span id="page-views">-</span> &nbsp;&nbsp; Visitors: <span id="visitors">-</span> (Since 2025-7-15)
+      Page Views: <span id="busuanzi_value_site_pv">-</span> &nbsp;&nbsp; Visitors: <span id="busuanzi_value_site_uv">-</span> (Since 2025-7-15)
     </div>
-    <script>
-      // Page Views
-      let pv = localStorage.getItem('page_views') || 0;
-      pv++;
-      localStorage.setItem('page_views', pv);
-      document.getElementById('page-views').innerText = pv;
-      // Visitors
-      let visitorKey = 'visited_' + (new Date()).toDateString();
-      let visitors = localStorage.getItem('visitors') || 0;
-      if (!localStorage.getItem(visitorKey)) {
-        visitors++;
-        localStorage.setItem('visitors', visitors);
-        localStorage.setItem(visitorKey, '1');
-      }
-      document.getElementById('visitors').innerText = visitors;
-    </script>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   </div>
 </footer> 
