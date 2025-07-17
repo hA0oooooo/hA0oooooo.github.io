@@ -1,0 +1,115 @@
+// 网站页脚
+.site-footer {
+  background-color: $footer-bg;
+  border-top: 1px solid $footer-border;
+  padding: $spacing-unit * 2 0 $spacing-unit 0;
+  margin-top: $spacing-unit * 2;
+}
+
+// 页脚内容
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: $spacing-unit * 1.5;
+  margin-bottom: $spacing-unit * 1.5;
+  
+  @include media-query($on-mobile) {
+    grid-template-columns: 1fr;
+    gap: $spacing-unit;
+  }
+}
+
+// 页脚部分
+.footer-section {
+  h3 {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: $grey-color;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: $spacing-unit / 2;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: $spacing-unit / 4;
+  }
+  
+  a {
+    color: $text-color;
+    font-weight: 500;
+    @include transition();
+    
+    &:hover {
+      color: $brand-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// 联系方式列表
+.contact-list {
+  a {
+    display: flex;
+    align-items: center;
+    
+    &::before {
+      content: '✉';
+      margin-right: 8px;
+      color: $brand-color;
+    }
+  }
+}
+
+// 关注链接列表
+.follow-list {
+  a {
+    display: flex;
+    align-items: center;
+    
+    &::before {
+      content: '🔗';
+      margin-right: 8px;
+      color: $brand-color;
+    }
+  }
+}
+
+// 网站统计
+.site-statistics {
+  text-align: center;
+  padding-top: $spacing-unit;
+  border-top: 1px solid $border-color;
+  
+  p {
+    margin: 0;
+    color: $grey-color;
+    font-size: 0.9em;
+  }
+  
+  .stat-item {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 $spacing-unit / 2;
+    
+    @include media-query($on-mobile) {
+      display: block;
+      margin: $spacing-unit / 4 0;
+    }
+  }
+  
+  .stat-icon {
+    margin-right: 4px;
+    fill: $grey-color;
+  }
+  
+  span {
+    font-weight: 500;
+    color: $brand-color;
+  }
+} 

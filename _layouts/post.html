@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+    {%- comment -%} 保留作者和meta信息，如有需要可恢复 {%- endcomment -%}
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+
+</div> 

@@ -1,0 +1,60 @@
+// 字体设置
+$base-font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$base-font-size: 16px;
+$base-font-weight: 400;
+$small-font-size: $base-font-size * 0.875;
+$base-line-height: 1.6;
+
+// 间距设置
+$spacing-unit: 30px;
+
+// 颜色设置
+$text-color: #2c3e50;
+$background-color: #fdfdfd;
+$brand-color: #3498db;
+$link-color: #3498db;
+$link-hover-color: #2980b9;
+
+$grey-color: #7f8c8d;
+$grey-color-light: #ecf0f1;
+$grey-color-dark: #34495e;
+
+$border-color: #e1e8ed;
+
+// 响应式断点
+$on-mobile: 600px;
+$on-tablet: 900px;
+$on-desktop: 1200px;
+
+// 容器宽度 - 解决henrylau宽度限制问题
+$content-width: 1000px;  // 原来henrylau只有640px，现在增加到1000px
+$content-width-tablet: 90%;
+$content-width-mobile: 95%;
+
+// 头部设置
+$header-height: 70px;
+$header-bg: $background-color;
+$header-border: $border-color;
+
+// 页脚设置
+$footer-bg: #f8f9fa;
+$footer-border: $border-color;
+
+// 混合器
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+} 

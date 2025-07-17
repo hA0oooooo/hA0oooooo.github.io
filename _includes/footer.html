@@ -1,0 +1,77 @@
+<footer class="site-footer">
+  <div class="wrapper" style="max-width: 900px; margin: 0 auto; padding-left: 0;">
+    <div class="footer-col-wrapper" style="display: flex; justify-content: space-between; gap: 40px;">
+      <div class="footer-col footer-col-1">
+        <h4>CONTACT</h4>
+        <div class="social-links">
+          {% for contact in site.footer.contact %}
+          <div class="social-link contact-links" style="white-space: nowrap;">
+            {% assign contact_icon_path = "/assets/img/icons/" | append: contact.name | downcase | append: ".svg" | absolute_url %}
+            <img src="{{ contact_icon_path }}" alt="{{ contact.name | downcase }}" />
+            <a href="{{ contact.link }}" id="{{ contact.name | downcase }}-link" style="white-space: nowrap;">
+              {% if contact.value and contact.value != "" and contact.value != nil %}
+              {{ contact.value }}
+              {% else %}
+              {{ contact.name }}
+              {% endif %}
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="footer-col footer-col-2">
+        <h4>FOLLOW</h4>
+        <div class="social-links follow-links">
+          {% for follow in site.footer.follow %}
+          <div class="social-link" style="white-space: nowrap;">
+            {% assign follow_icon_path = "/assets/img/icons/" | append: follow.name | downcase | append: ".svg" | absolute_url %}
+            <img src="{{ follow_icon_path }}" alt="{{ follow.name | downcase }}" />
+            <a href="{{ follow.link }}" style="white-space: nowrap;">
+              {% if follow.value and follow.value != "" and follow.value != nil %}
+              {{ follow.value }}
+              {% else %}
+              {{ follow.name }}
+              {% endif %}
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="footer-col footer-col-3">
+        <h4>LINK</h4>
+        <div class="social-links link-links">
+          {% for link in site.footer.link %}
+          <div class="social-link" style="white-space: nowrap;">
+            <a href="{{ link.link }}" target="_blank">
+              {% if link.value and link.value != "" and link.value != nil %}
+              {{ link.value }}
+              {% else %}
+              {{ link.name }}
+              {% endif %}
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 20px; color: #7a7a7a; font-size: 1.1em;">
+      Page Views: <span id="page-views">-</span> &nbsp;&nbsp; Visitors: <span id="visitors">-</span> (Since 2025-7-15)
+    </div>
+    <script>
+      // Page Views
+      let pv = localStorage.getItem('page_views') || 0;
+      pv++;
+      localStorage.setItem('page_views', pv);
+      document.getElementById('page-views').innerText = pv;
+      // Visitors
+      let visitorKey = 'visited_' + (new Date()).toDateString();
+      let visitors = localStorage.getItem('visitors') || 0;
+      if (!localStorage.getItem(visitorKey)) {
+        visitors++;
+        localStorage.setItem('visitors', visitors);
+        localStorage.setItem(visitorKey, '1');
+      }
+      document.getElementById('visitors').innerText = visitors;
+    </script>
+  </div>
+</footer> 

@@ -1,0 +1,164 @@
+// 首页样式
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-unit 0;
+  
+  @include media-query($on-tablet) {
+    text-align: left;
+  }
+}
+
+// 个人头像
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: $spacing-unit * 1.5;
+  border: 4px solid $brand-color;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  @include transition();
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  @include media-query($on-mobile) {
+    width: 150px;
+    height: 150px;
+    margin-bottom: $spacing-unit;
+  }
+}
+
+// 首页内容
+.home-content {
+  max-width: 700px;
+  
+  p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: $spacing-unit;
+    color: $grey-color-dark;
+  }
+  
+  a {
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    @include transition();
+    
+    &:hover {
+      border-bottom-color: $brand-color;
+      text-decoration: none;
+    }
+  }
+  
+  // 特殊样式的段落（比如支持球队）
+  .support-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: $spacing-unit / 2;
+    margin: $spacing-unit 0;
+    
+    @include media-query($on-mobile) {
+      flex-direction: column;
+      gap: $spacing-unit / 4;
+    }
+    
+    span {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      background-color: $grey-color-light;
+      border-radius: 20px;
+      font-size: 0.9em;
+      
+      img {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        display: inline-block;
+      }
+    }
+  }
+  
+  // 地址信息
+  .address-info {
+    margin-top: $spacing-unit * 1.5;
+    padding: $spacing-unit / 2;
+    background-color: $grey-color-light;
+    border-radius: 8px;
+    font-size: 0.95em;
+    color: $grey-color-dark;
+  }
+  
+  // 获奖信息
+  .awards-section {
+    margin-top: $spacing-unit * 1.5;
+    text-align: left;
+    
+    h2 {
+      color: $brand-color;
+      font-size: 1.3em;
+      margin-bottom: $spacing-unit / 2;
+    }
+    
+    ul {
+      list-style: none;
+      margin-left: 0;
+      
+      li {
+        position: relative;
+        padding-left: $spacing-unit;
+        margin-bottom: $spacing-unit / 2;
+        
+        &::before {
+          content: '🏆';
+          position: absolute;
+          left: 0;
+          color: $brand-color;
+        }
+      }
+    }
+  }
+  
+  // 新闻动态
+  .news-section {
+    margin-top: $spacing-unit * 1.5;
+    text-align: left;
+    
+    h2 {
+      color: $brand-color;
+      font-size: 1.3em;
+      margin-bottom: $spacing-unit / 2;
+    }
+    
+    ul {
+      list-style: none;
+      margin-left: 0;
+      
+      li {
+        position: relative;
+        padding-left: $spacing-unit;
+        margin-bottom: $spacing-unit / 2;
+        
+        &::before {
+          content: '📢';
+          position: absolute;
+          left: 0;
+          color: $brand-color;
+        }
+        
+        strong {
+          color: $brand-color;
+        }
+      }
+    }
+  }
+} 

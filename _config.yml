@@ -1,0 +1,91 @@
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+title: Haoyang Chen
+# description: >- # this means to ignore newlines until "baseurl:"
+#   Bay is a minimal Jekyll Theme.
+baseurl: "" # the subpath of the site
+url: "https://hA0oooooo.github.io" 
+og_image: /assets/img/profile.jpg
+
+header:
+  pages:
+    - name: About
+      slug: /
+    - name: Experience
+    - name: Publication
+    - name: Blog
+
+footer:
+  show_powered_by: false
+  contact:
+    - name: Email
+      value: 23307130004@m.fudan.edu.cn
+      link: mailto:23307130004@m.fudan.edu.cn
+
+  follow:
+    - name: zhihu-1
+      link: https://www.zhihu.com/people/ri-guang-47-4
+      value: "hYdraijk"
+
+  link: []
+
+# Build settings
+markdown: kramdown
+sass:
+    style: :compressed
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Google analytics
+google_analytics: UA-NNNNNNNN-N
+
+# Optional features
+future: false
+highlighter: rouge
+markdown: kramdown
+gist:
+  noscript: false
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+include:
+  - .htaccess
+  - _pages
+
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - Rakefile
+  - README
+  - tmp
+
+plugins_dir:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist

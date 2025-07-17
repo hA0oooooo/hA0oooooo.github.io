@@ -1,0 +1,14 @@
+.not-found {
+  text-align: center;
+  padding: $spacing-unit * 2 0;
+
+  h1 {
+    font-size: 72px;
+    margin-bottom: $spacing-unit / 2;
+  }
+
+  p {
+    font-size: 18px;
+    color: $grey-color;
+  }
+} 
