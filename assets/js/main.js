@@ -9,34 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
   initSmoothScroll();
 });
 
-// 访客统计初始化
+// 访客统计初始化 - 使用不蒜子统计服务
 function initVisitorStats() {
-  // 这里可以集成真实的访客统计服务，比如Google Analytics
-  // 现在使用本地存储模拟
+  // 统计功能由不蒜子提供，脚本会自动更新页面中的统计数据
+  // 相关元素ID: busuanzi_value_page_pv (页面浏览量), busuanzi_value_site_uv (访客数)
   
-  const pageViewsElement = document.getElementById('page-views');
-  const visitorsElement = document.getElementById('visitors');
-  
-  if (pageViewsElement && visitorsElement) {
-    // 模拟访客统计数据
-    let pageViews = localStorage.getItem('pageViews') || 0;
-    let visitors = localStorage.getItem('visitors') || 0;
-    
-    // 增加页面浏览量
-    pageViews = parseInt(pageViews) + 1;
-    localStorage.setItem('pageViews', pageViews);
-    
-    // 检查是否是新访客
-    if (!localStorage.getItem('visited')) {
-      visitors = parseInt(visitors) + 1;
-      localStorage.setItem('visitors', visitors);
-      localStorage.setItem('visited', 'true');
-    }
-    
-    // 动画显示数字
-    animateCounter(pageViewsElement, pageViews);
-    animateCounter(visitorsElement, visitors);
-  }
+  // 不蒜子会自动处理统计逻辑，无需额外JavaScript代码
+  // 如果需要自定义统计数据显示效果，可以在这里添加装饰性功能
 }
 
 // 数字动画效果

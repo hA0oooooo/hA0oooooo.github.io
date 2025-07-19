@@ -55,44 +55,18 @@
       </div>
     </div>
     
-    <!-- 网站访问统计 - 简朴样式 -->
+    <!-- 网站访问统计 - 直接使用不蒜子原版 -->
     <div style="text-align: center; margin-top: 20px; color: #7a7a7a; font-size: 1.1em;">
-      <span>
-        Page Views: <span id="site_pv">1</span>
+      <span id="busuanzi_container_page_pv">
+        Page Views: <span id="busuanzi_value_page_pv">0</span>
       </span>
       &nbsp;&nbsp;
-      <span>
-        Visitors: <span id="site_uv">1</span> (Since 2025-7-15)
+      <span id="busuanzi_container_site_uv">
+        Visitors: <span id="busuanzi_value_site_uv">0</span> (Since 2025-7-15)
       </span>
     </div>
     
-    <script>
-      // 简单的本地统计系统
-      (function() {
-        var startDate = '2025-07-15';
-        var today = new Date().toISOString().split('T')[0];
-        
-        // 页面浏览量统计
-        var pv = parseInt(localStorage.getItem('site_pv_' + startDate)) || 0;
-        pv += 1;
-        localStorage.setItem('site_pv_' + startDate, pv);
-        document.getElementById('site_pv').textContent = pv;
-        
-        // 访客统计 (基于session)
-        var uvKey = 'site_uv_session_' + startDate;
-        var todayUVKey = 'site_uv_date_' + startDate;
-        
-        if (!sessionStorage.getItem(uvKey)) {
-          // 新访客
-          sessionStorage.setItem(uvKey, '1');
-          var uv = parseInt(localStorage.getItem(todayUVKey)) || 0;
-          uv += 1;
-          localStorage.setItem(todayUVKey, uv);
-        }
-        
-        var totalUV = parseInt(localStorage.getItem(todayUVKey)) || 1;
-        document.getElementById('site_uv').textContent = totalUV;
-      })();
-    </script>
+    <!-- 不蒜子原版统计脚本 -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   </div>
 </footer> 
